@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "610764274619",
+    "firebase_url": "https://onlineq-fcc3a.firebaseio.com",
+    "project_id": "onlineq-fcc3a",
+    "storage_bucket": "onlineq-fcc3a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610764274619:android:5d0347b32ce70974",
+        "android_client_info": {
+          "package_name": "penguin.onlineq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610764274619-6fqr2it700372um73ega2abeq3e50vou.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "penguin.onlineq",
+            "certificate_hash": "7b20ed889d81a88a0e3b050a67de526bec73513d"
+          }
+        },
+        {
+          "client_id": "610764274619-59g3nb318vvft8peleemghumtqdl3mv5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtlt8KDgffYL4qJTh1HBlQ4aHm6YFDHTc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "610764274619-59g3nb318vvft8peleemghumtqdl3mv5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
