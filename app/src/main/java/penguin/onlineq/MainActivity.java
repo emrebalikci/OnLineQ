@@ -18,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import penguin.onlineq.Common.Common;
 import penguin.onlineq.Model.User;
 
 public class MainActivity extends AppCompatActivity {
@@ -74,6 +75,7 @@ Button btnSignUp,btnSignIn;
                         if(login.getPassword().equals(pwd))
                         {
                             Intent homeActivity=new Intent(MainActivity.this,Home.class);
+                            Common.currentUser=login;
                             startActivity(homeActivity);
                             finish();
                         }

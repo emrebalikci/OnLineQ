@@ -1,6 +1,7 @@
 package penguin.onlineq;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -19,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import penguin.onlineq.Common.Common;
 import penguin.onlineq.Interface.ItemClickListener;
 import penguin.onlineq.Model.Category;
 import penguin.onlineq.ViewHolder.CategoryViewHolder;
@@ -53,6 +55,7 @@ public class CategoryFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View myfragment=inflater.inflate(R.layout.fragment_category,container,false);
 
         listCategory=(RecyclerView)myfragment.findViewById(R.id.listCategory);
@@ -83,7 +86,12 @@ public class CategoryFragment extends Fragment {
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(getActivity(),String.format("%d|%s",adapter.getRef(position).getKey(),model.getName()),Toast.LENGTH_SHORT).show();
+                      // Toast.makeText(getActivity(),String.format("%d | %s",adapter.getRef(position).getKey(),model.getName()),Toast.LENGTH_SHORT).show();
+                        Intent startGame=new Intent(getActivity(),Start.class);
+                        Common.categoryId=adapter.getRef(position).getKey();
+                        startActivity(startGame);
+
+
                     }
                 });
             }
