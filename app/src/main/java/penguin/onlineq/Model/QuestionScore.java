@@ -10,9 +10,9 @@ public class QuestionScore {
     private String Score;
 
     public QuestionScore(String question_Score, String user, String score) {
-        Question_Score = question_Score;
-        User = user;
-        Score = score;
+       this.Question_Score = question_Score;
+        this.User = user;
+       this.Score = score;
     }
 
     public String getQuestion_Score() {

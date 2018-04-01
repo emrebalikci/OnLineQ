@@ -31,7 +31,7 @@ public class Done extends AppCompatActivity {
         question_score=database.getReference("Question_Score");
 
 
-        txtResultScore=(TextView)findViewById(R.id.txtTotalQuestion);
+        txtResultScore=(TextView)findViewById(R.id.txtTotalScore);
         getTxtResultQuestion=(TextView)findViewById(R.id.txtTotalQuestion);
         progressBar=(ProgressBar)findViewById(R.id.doneProgressBar);
         btnTryAgain=(Button)findViewById(R.id.btnTryAgain);

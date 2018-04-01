@@ -21,7 +21,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
 
 
     final static  long INTERVAL=1000; //1 saniye
-    final static  long TIMEOUT=10000; //10 Saniye
+    final static  long TIMEOUT=100000; //10 Saniye
 
     int progressValue=0;
 
@@ -103,7 +103,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
 
             }
 
-             txtScore.setText(String.format("%d",score));
+             txtScore.setText(String.format("%d ",score));
         }
     }
 
