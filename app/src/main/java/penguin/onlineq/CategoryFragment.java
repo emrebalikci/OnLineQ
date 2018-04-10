@@ -89,8 +89,8 @@ public class CategoryFragment extends Fragment {
                       // Toast.makeText(getActivity(),String.format("%d | %s",adapter.getRef(position).getKey(),model.getName()),Toast.LENGTH_SHORT).show();
                         Intent startGame=new Intent(getActivity(),Start.class);
                         Common.categoryId=adapter.getRef(position).getKey();
+                        Common.categoryName=model.getName();
                         startActivity(startGame);
-
 
                     }
                 });
