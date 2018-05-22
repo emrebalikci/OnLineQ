@@ -1,8 +1,11 @@
 package penguin.onlineq;
 
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.provider.CalendarContract;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +21,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import java.util.Calendar;
+
+import penguin.onlineq.BroadcastReciver.AlarmReceiver;
 import penguin.onlineq.Common.Common;
 import penguin.onlineq.Model.User;
 
@@ -35,6 +41,12 @@ Button btnSignUp,btnSignIn;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+        registerAlarm();
+
+
 
 
         database=FirebaseDatabase.getInstance();
@@ -59,6 +71,27 @@ Button btnSignUp,btnSignIn;
                 signIn(edtUser.getText().toString(),edtPassword.getText().toString());
             }
         });
+
+
+    }
+
+    private void registerAlarm() {
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY,9);
+        calendar.set(Calendar.MINUTE,40);
+        calendar.set(Calendar.SECOND,0);
+
+
+    Intent intent =new Intent(MainActivity.this, AlarmReceiver.class);
+        PendingIntent pendingIntent=PendingIntent.getBroadcast(MainActivity.this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager am=(AlarmManager)this.getSystemService(this.ALARM_SERVICE);
+        am.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
+
+
+
+
+
 
 
     }
